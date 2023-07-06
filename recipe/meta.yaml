@@ -1,5 +1,5 @@
 {% set name = "graphium" %}
-{% set version = "2.0.2" %}
+{% set version = "2.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/graphium-{{ version }}.tar.gz
-  sha256: cbb9593ac8b60c96d60a1df3fca3405c76aae243d34007b4372cf3f02bfa5173
+  sha256: 31f4d25365ee9339a95356b01a16412c8068bbc27c5b6a14d2e0bb304d6d1b68
 
 build:
   entry_points:
@@ -18,30 +18,38 @@ build:
 
 requirements:
   host:
-    - python >=3.10
+    - python >=3.8
     - setuptools
     - setuptools-scm
     - pip
   run:
-    - python >=3.10
+    - python >=3.8
+
     - click
     - loguru
     - omegaconf >=2.0.0
     - tqdm
+    - platformdirs
+
+    # scientific
     - numpy
     - scipy >=1.4
     - pandas >=1.0
     - scikit-learn
     - fastparquet
-    - matplotlib-base >=3.0.1
+
+    # viz
+    - matplotlib >=3.0.1
     - seaborn
+
+    # cloud IO
     - fsspec >=2021.6
     - s3fs >=2021.6
     - gcsfs >=2021.6
-    - platformdirs
+
+    # ML packages
     - pytorch >=1.10.2,<2.0
-    - torchvision
-    - pytorch-lightning >=1.9
+    - lightning >=2.0
     - torchmetrics >=0.7.0,<0.11
     - ogb
     - pytorch_geometric >=2.0
@@ -50,8 +58,10 @@ requirements:
     - pytorch_sparse >=0.6
     - pytorch_cluster >=1.5
     - pytorch_scatter >=2.0
+
+    # chemistry
+    - rdkit
     - datamol >=0.10
-    - mordred
 
 test:
   imports:
