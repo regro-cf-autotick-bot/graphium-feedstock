@@ -39,7 +39,7 @@ requirements:
     - fastparquet
 
     # viz
-    - matplotlib >=3.0.1
+    - matplotlib-base >=3.0.1
     - seaborn
 
     # cloud IO
