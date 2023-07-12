@@ -64,6 +64,8 @@ requirements:
     - datamol >=0.10
 
 test:
+  requirements:
+    - pydantic <2
   imports:
     - graphium
   commands:
