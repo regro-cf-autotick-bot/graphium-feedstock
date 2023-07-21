@@ -1,5 +1,5 @@
 {% set name = "graphium" %}
-{% set version = "2.1.3" %}
+{% set version = "2.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/graphium-{{ version }}.tar.gz
-  sha256: 4d7cc662af0b81c44948c0c6d4a8a39d97f5c3db13880e1dd2c4852c2095628f
+  sha256: 1b2641753ef0935ee98337969c9db66ca6524385649d7623f0e6cc601aace3af
 
 build:
   entry_points:
@@ -48,7 +48,7 @@ requirements:
     - gcsfs >=2021.6
 
     # ML packages
-    - pytorch >=1.10.2,<2.0
+    - pytorch >=1.12
     - lightning >=2.0
     - torchmetrics >=0.7.0,<0.11
     - ogb
