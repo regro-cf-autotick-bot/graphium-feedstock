@@ -25,7 +25,7 @@ requirements:
   run:
     - python >=3.8
 
-    - click
+    - typer
     - loguru
     - omegaconf >=2.0.0
     - tqdm
