@@ -32,7 +32,7 @@ requirements:
     - platformdirs
 
     # scientific
-    - numpy == 1.26.4
+    - numpy ==1.26.4
     - scipy >=1.4
     - pandas >=1.0
     - scikit-learn
