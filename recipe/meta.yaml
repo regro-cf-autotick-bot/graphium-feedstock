@@ -1,5 +1,5 @@
 {% set name = "graphium" %}
-{% set version = "2.2.0" %}
+{% set version = "2.3.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/graphium-{{ version }}.tar.gz
-  sha256: 1b2641753ef0935ee98337969c9db66ca6524385649d7623f0e6cc601aace3af
+  sha256: afa9bc39520e0fea2efa2cfcd555860a119cd2fbc8569fd422b8951dc43ecaa2
 
 build:
   entry_points:
