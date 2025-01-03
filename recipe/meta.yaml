@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/graphium-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/graphium-{{ version }}.tar.gz
   sha256: 805fd9d4643df515036a63f75e13da48d055840bc04eab3277004c93379303c0
 
 build:
@@ -14,16 +14,16 @@ build:
     - graphium = graphium.cli:app
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools
     - setuptools-scm
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - hydra-core
     - typer
     - loguru
@@ -66,6 +66,7 @@ requirements:
 test:
   requires:
     - pydantic <2
+    - python {{ python_min }}
   imports:
     - graphium
   commands:
